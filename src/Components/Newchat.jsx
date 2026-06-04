@@ -4,14 +4,15 @@ export default function NewChat() {
     const { input, setInput, response, loading, handleSubmit, messages } = useLlm();
 
     return (
-        <div style={{background:'#70757a'}}>
+        <div style={{background:'#000000'}}>
         <div style={{ padding: '50px 20px', fontFamily: 'sans-serif', margin: '0 auto', width: 'fit-content', boxSizing: 'border-box' }}>
             <h1 style={{ textAlign: 'center', color: '#f5f5f5' }}>AI Chatbot</h1>
 
             <div className='scroll-container' style={{
                 marginTop: '20px',
                 marginBottom: '20px',
-                background: 'linear-gradient(to bottom, #07070785, #ffffff)',
+                background: 'linear-gradient(to bottom, #53515185, #000000)',
+                border:'1px solid #000',
                 padding: '15px 25px',
                 borderRadius: '30px',
                 height: '400px',
