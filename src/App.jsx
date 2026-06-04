@@ -33,13 +33,16 @@ export default function App() {
           alignItems: 'center', 
           justifyContent: 'center' 
         }}>
-          <h2 style={{ color: '#48b615' }}>Welcome to AI Chatbot</h2>
-          <p style={{ color: '#223fe2', marginBottom: '20px' }}>Please sign in with your Google account to continue.</p>
-          
+          <div style={{height:'200px', width:'400px', background:'#f5f5f5',border:'1px solid #575656',borderRadius:'15px',textAlign:'center'}}>
+          <h2 style={{ color: '#000000' }}>Welcome to AI Chatbot</h2>
+          <p style={{ color: '#474749', marginBottom: '20px' }}>Please sign in with your Google account to continue.</p>
+          <div style={{width:'200px',margin:'0 auto'}}>
           <GoogleLogin
             onSuccess={handleLoginSuccess}
             onError={handleLoginError}
           />
+          </div>
+          </div>
         </div>
       ) : (
         /* 2. LOGGED IN: A protective wrapper that forces a minimum height */

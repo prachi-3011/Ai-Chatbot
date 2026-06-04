@@ -10,3 +10,12 @@
   scrollbar-color: #a13e3e #f1f1f1; /* thumb color | track color */
   scrollbar-width: thin;             /* options: auto | thin | none */
 }
+.custom-box {
+  width: 400px;
+  height: 400px;
+  background-color: #ffffff;
+  border: 2px solid #414242;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+}
