@@ -1,0 +1,19 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom,#abb0b9, #0e4cc7); 
+}
+.text-boundary {
+  width: 580px;
+  height: 400px; 
+  overflow: auto; 
+  text-overflow: ellipsis; 
+}
+.scroll-container {
+  overflow: auto;
+  
+  /* The standard properties */
+  scrollbar-color: #a13e3e #f1f1f1; /* thumb color | track color */
+  scrollbar-width: thin;             /* options: auto | thin | none */
+}
