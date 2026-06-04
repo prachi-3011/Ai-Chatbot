@@ -5,12 +5,12 @@ export default function NewChat() {
 
     return (
         <div style={{ padding: '50px 20px', fontFamily: 'sans-serif', margin: '0 auto', width: 'fit-content', boxSizing: 'border-box' }}>
-            <h1 style={{ textAlign: 'center', color: '#f5f5f5' }}>AI Chatbot</h1>
+            <h1 style={{ textAlign: 'center', color: '#32373b' }}>AI Chatbot</h1>
 
             <div className='scroll-container' style={{
                 marginTop: '20px',
                 marginBottom: '20px',
-                background: '#f5f5f5',
+                background: 'linear-gradient(to bottom, #9398a0, #ffffff)',
                 padding: '15px',
                 borderRadius: '30px',
                 height: '400px',
@@ -35,7 +35,7 @@ export default function NewChat() {
                                 textAlign: 'left',
                                 padding: '10px 15px',
                                 borderRadius: '15px',
-                                background: msg.role === 'user' ? '#007bff' : '#e0e0e0',
+                                background: msg.role === 'user' ? '#7186a8' : '#e0e0e0',
                                 color: msg.role === 'user' ? 'white' : 'black',
                                 margin: 0,
                                 whiteSpace: 'pre-wrap',
@@ -81,9 +81,9 @@ export default function NewChat() {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Ask a follow-up question..."
-                    style={{ flexGrow: 1, padding: '12px', marginRight: '8px', borderRadius: '15px', border: '1px solid #ccc', minWidth: '0' }}
+                    style={{ flexGrow: 1, padding: '12px', marginRight: '8px', borderRadius: '15px', border: '2px solid #3f3e3ec7', minWidth: '0' }}
                 />
-                <button type="submit" disabled={loading} style={{ padding: '8px 28px', borderRadius: '15px', cursor: 'pointer' }}>
+                <button type="submit" disabled={loading} style={{ padding: '8px 28px', borderRadius: '15px', cursor: 'pointer', background:'#9398a0' }}>
                     {loading ? 'Thinking...' : 'Send'}
                 </button>
             </form>

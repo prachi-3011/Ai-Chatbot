@@ -7,7 +7,6 @@ export default function App() {
 
   const handleLoginSuccess = (credentialResponse) => {
     console.log("Encoded JWT Token from Google:", credentialResponse.credential);
-    
     setUser(credentialResponse.credential);
   };
 
@@ -21,38 +20,58 @@ export default function App() {
   };
 
   return (
-    <div className="app-container" style={{ fontFamily: 'sans-serif', backgroundColor: '#222', minHeight: '100vh', color: '#fff' }}>
-      
+    <>
       {!user ? (
-        /* IF NOT LOGGED IN: Show the login screen */
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '80vh' }}>
-          <h2>Welcome to AI Chatbot</h2>
-          <p style={{ color: '#aaa', marginBottom: '20px' }}>Please sign in with your Google account to continue.</p>
+        /* 1. LOGGED OUT: Center-aligned login wrapper */
+        <div style={{ 
+          fontFamily: 'sans-serif', 
+          color: '#000000', 
+          minHeight: '100vh',
+          background: 'linear-gradient(to bottom, #9398a0, #ffffff)', 
+          display: 'flex', 
+          flexDirection: 'column', 
+          alignItems: 'center', 
+          justifyContent: 'center' 
+        }}>
+          <h2 style={{ color: '#48b615' }}>Welcome to AI Chatbot</h2>
+          <p style={{ color: '#223fe2', marginBottom: '20px' }}>Please sign in with your Google account to continue.</p>
           
           <GoogleLogin
             onSuccess={handleLoginSuccess}
             onError={handleLoginError}
-            useOneTap // Optional: Enables the cool drop-down prompt in the top right corner
           />
         </div>
       ) : (
-        /* IF LOGGED IN: Show the logout header and your Chatbot */
-        <div>
-          <header style={{ display: 'flex', justifyContent: 'flex-end', padding: '20px' }}>
-            <button 
-              onClick={handleLogout} 
-              style={{ padding: '8px 16px', borderRadius: '15px', border: 'none', backgroundColor: '#ff4d4d', color: '#fff', cursor: 'pointer' }}
-            >
-              Sign Out
-            </button>
-          </header>
+        /* 2. LOGGED IN: A protective wrapper that forces a minimum height */
+        <div style={{ 
+          position: 'relative', 
+          minHeight: '100vh',
+          width: '100%',
+          display: 'block' // Ensures block flow returns for NewChat layout
+        }}>
           
-          <main>
-            <NewChat />
-          </main>
+          <button 
+            onClick={handleLogout} 
+            style={{ 
+              position: 'absolute',
+              top: '20px',
+              right: '20px',
+              padding: '8px 16px', 
+              borderRadius: '15px', 
+              border: 'none', 
+              backgroundColor: '#ff4d4d', 
+              color: '#fff', 
+              cursor: 'pointer',
+              zIndex: 1000 
+            }}
+          >
+            Sign Out
+          </button>
+          
+          {/* Your original component runs safely inside here */}
+          <NewChat />
         </div>
       )}
-
-    </div>
+    </>
   );
 }
