@@ -4,20 +4,22 @@ export default function NewChat() {
     const { input, setInput, response, loading, handleSubmit, messages } = useLlm();
 
     return (
+        <div style={{background:'#70757a'}}>
         <div style={{ padding: '50px 20px', fontFamily: 'sans-serif', margin: '0 auto', width: 'fit-content', boxSizing: 'border-box' }}>
-            <h1 style={{ textAlign: 'center', color: '#32373b' }}>AI Chatbot</h1>
+            <h1 style={{ textAlign: 'center', color: '#f5f5f5' }}>AI Chatbot</h1>
 
             <div className='scroll-container' style={{
                 marginTop: '20px',
                 marginBottom: '20px',
-                background: 'linear-gradient(to bottom, #9398a0, #ffffff)',
-                padding: '15px',
+                background: 'linear-gradient(to bottom, #07070785, #ffffff)',
+                padding: '15px 25px',
                 borderRadius: '30px',
                 height: '400px',
-                overflow: 'auto',
-                width: 'fit-content' 
+                overflowY: 'auto',
+                width: 'fit-content', 
+                boxSizing:'border-box'
             }}>
-                <div className='text-boundary' style={{ display: 'flex', flexDirection: 'column', width: 'auto', maxWidth:'900px',minWidth:'600px' }}>
+                <div className='text-boundary' style={{ display: 'flex', flexDirection: 'column', width: 'fit-content',minWidth:'600px', maxWidth:'900px' }}>
                     
                     {messages.map((msg, index) => (
                         <div key={index} style={{ 
@@ -35,7 +37,7 @@ export default function NewChat() {
                                 textAlign: 'left',
                                 padding: '10px 15px',
                                 borderRadius: '15px',
-                                background: msg.role === 'user' ? '#7186a8' : '#e0e0e0',
+                                background: msg.role === 'user' ? '#2a2b2c' : '#e0e0e0',
                                 color: msg.role === 'user' ? 'white' : 'black',
                                 margin: 0,
                                 whiteSpace: 'pre-wrap',
@@ -87,6 +89,7 @@ export default function NewChat() {
                     {loading ? 'Thinking...' : 'Send'}
                 </button>
             </form>
+        </div>
         </div>
     );
 }
