@@ -5,7 +5,7 @@
 
 .scroll-container {
   overflow: auto;
-  scrollbar-color: #572323 #000000; /* [Thumb Color (Dark Gray)] [Track Color (Light Gray)] */
+  scrollbar-color: #eed025 #00000000; /* [Thumb Color (Dark Gray)] [Track Color (Light Gray)] */
   scrollbar-width: thin;             
 }
 
@@ -14,7 +14,7 @@
 }
 
 .scroll-container::-webkit-scrollbar-track {
-  background: #000000; 
+  background: #ad3636e7; 
   border-radius: 20px;
 }
 

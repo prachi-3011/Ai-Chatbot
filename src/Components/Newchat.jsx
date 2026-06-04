@@ -1,4 +1,5 @@
 import { useLlm } from './LlmService';
+import './index.css';
 
 export default function NewChat() {
     const { input, setInput, response, loading, handleSubmit, messages } = useLlm();
@@ -86,7 +87,7 @@ export default function NewChat() {
                     placeholder="Ask a follow-up question..."
                     style={{ flexGrow: 1, padding: '12px', marginRight: '8px', borderRadius: '15px', border: '2px solid #3f3e3ec7', minWidth: '0' }}
                 />
-                <button type="submit" disabled={loading} style={{ padding: '8px 28px', borderRadius: '15px', cursor: 'pointer', background:'#9398a0' }}>
+                <button type="submit" disabled={loading} style={{ padding: '8px 28px', borderRadius: '15px', cursor: 'pointer', background:'#655ec9' }}>
                     {loading ? 'Thinking...' : 'Send'}
                 </button>
             </form>

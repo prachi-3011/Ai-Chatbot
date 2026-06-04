@@ -22,12 +22,11 @@ export default function App() {
   return (
     <>
       {!user ? (
-        /* 1. LOGGED OUT: Center-aligned login wrapper */
         <div style={{ 
           fontFamily: 'sans-serif', 
           color: '#000000', 
           minHeight: '100vh',
-          background: 'linear-gradient(to bottom, #9398a0, #ffffff)', 
+          background: '#000000', 
           display: 'flex', 
           flexDirection: 'column', 
           alignItems: 'center', 
@@ -48,8 +47,9 @@ export default function App() {
         /* 2. LOGGED IN: A protective wrapper that forces a minimum height */
         <div style={{ 
           position: 'relative', 
-          minHeight: '100vh',
+          Height: '100vh',
           width: '100%',
+          overflow:'hidden',
           display: 'block' // Ensures block flow returns for NewChat layout
         }}>
           
@@ -62,7 +62,7 @@ export default function App() {
               padding: '8px 16px', 
               borderRadius: '15px', 
               border: 'none', 
-              backgroundColor: '#ff4d4d', 
+              backgroundColor: '#655ec9', 
               color: '#fff', 
               cursor: 'pointer',
               zIndex: 1000 
