@@ -13,7 +13,7 @@ export default function NewChat({ userName = "Explorer" }) {
             {/* CONDITIONAL RENDER: This greeting sub-header banner will automatically hide once messages exist */}
             {messages.length === 0 && (
                 <p style={{ textAlign: 'center', color: '#888', margin: '0 0 20px 0', fontSize: '16px' }}>
-                    How are you, <span style={{ color: '#655ec9', fontWeight: 'bold' }}>{userName}</span>? 👋
+                    Hi Welcome, <span style={{ color: '#655ec9', fontWeight: 'bold' }}>{userName}</span>? 👋
                 </p>
             )}
 
