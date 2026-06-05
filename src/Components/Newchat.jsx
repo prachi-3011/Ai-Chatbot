@@ -1,13 +1,21 @@
 import { useLlm } from './LlmService';
 import './index.css';
 
-export default function NewChat() {
-    const { input, setInput, response, loading, handleSubmit, messages } = useLlm();
+export default function NewChat({ userName = "Explorer" }) {
+    const { input, setInput, response, loading, handleSubmit, messages } = useLlm(userName);
 
     return (
-        <div style={{background:'#000000'}}>
+        <div style={{background:'#000000', minHeight: '100vh'}}>
         <div style={{ padding: '20px 40px', fontFamily: 'sans-serif', margin: '0 auto', width: 'fit-content', boxSizing: 'border-box' }}>
-            <h1 style={{ textAlign: 'center', color: '#f5f5f5' }}>AI Chatbot</h1>
+            
+            <h1 style={{ textAlign: 'center', color: '#f5f5f5', marginBottom: '5px' }}>AI Chatbot</h1>
+            
+            {/* CONDITIONAL RENDER: This greeting sub-header banner will automatically hide once messages exist */}
+            {messages.length === 0 && (
+                <p style={{ textAlign: 'center', color: '#888', margin: '0 0 20px 0', fontSize: '16px' }}>
+                    How are you, <span style={{ color: '#655ec9', fontWeight: 'bold' }}>{userName}</span>? 👋
+                </p>
+            )}
 
             <div className='scroll-container' style={{
                 marginTop: '20px',

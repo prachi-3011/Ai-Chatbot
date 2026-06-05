@@ -5,9 +5,28 @@ import NewChat from './Components/Newchat';
 export default function App() {
   const [user, setUser] = useState(null);
 
+  // const handleLoginSuccess = (credentialResponse) => {
+  //   console.log("Encoded JWT Token from Google:", credentialResponse.credential);
+  //   setUser(credentialResponse.credential);
+  // };
   const handleLoginSuccess = (credentialResponse) => {
-    console.log("Encoded JWT Token from Google:", credentialResponse.credential);
-    setUser(credentialResponse.credential);
+    try {
+      // Decode the base64 JWT payload from Google token cleanly without external packages
+      const base64Url = credentialResponse.credential.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const jsonPayload = decodeURIComponent(
+        atob(base64)
+          .split('')
+          .map((c) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+          .join('')
+      );
+      
+      const decodedUser = JSON.parse(jsonPayload);
+      console.log("Logged in User Profile:", decodedUser);
+      setUser(decodedUser); // This now contains 'name', 'email', 'picture'
+    } catch (error) {
+      console.error("Failed to parse Google credentials", error);
+    }
   };
 
   const handleLoginError = () => {
@@ -72,7 +91,7 @@ export default function App() {
           </button>
           
           {/* Your original component runs safely inside here */}
-          <NewChat />
+          <NewChat userName={user.name}/>
         </div>
       )}
     </>
