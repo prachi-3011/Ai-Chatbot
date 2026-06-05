@@ -6,7 +6,7 @@ export default function NewChat() {
 
     return (
         <div style={{background:'#000000'}}>
-        <div style={{ padding: '50px 20px', fontFamily: 'sans-serif', margin: '0 auto', width: 'fit-content', boxSizing: 'border-box' }}>
+        <div style={{ padding: '20px 40px', fontFamily: 'sans-serif', margin: '0 auto', width: 'fit-content', boxSizing: 'border-box' }}>
             <h1 style={{ textAlign: 'center', color: '#f5f5f5' }}>AI Chatbot</h1>
 
             <div className='scroll-container' style={{
@@ -87,7 +87,7 @@ export default function NewChat() {
                     placeholder="Ask a follow-up question..."
                     style={{ flexGrow: 1, padding: '12px', marginRight: '8px', borderRadius: '15px', border: '2px solid #3f3e3ec7', minWidth: '0' }}
                 />
-                <button type="submit" disabled={loading} style={{ padding: '8px 28px', borderRadius: '15px', cursor: 'pointer', background:'#655ec9' }}>
+                <button type="submit" disabled={loading} style={{ padding: '8px 28px', borderRadius: '15px', cursor: 'pointer',color:'#f5f5f5', background:'#655ec9' }}>
                     {loading ? 'Thinking...' : 'Send'}
                 </button>
             </form>
