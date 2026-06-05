@@ -15,13 +15,8 @@ export function useLlm() {
 
     const newUserMessage = { role: 'user', content: input };
 
-    // let updatedHistory;
-    // if (messages.length === 0) {
-    //   updatedHistory = [zooKeeperSystem, newUserMessage];
-    // }
-    // else {
+
     //   const updatedHistory = [...messages, newUserMessage];
-    // }
     // setMessages(updatedHistory);
     // setInput('');
 
