@@ -8,7 +8,7 @@ export default function NewChat({ userName = "Explorer" }) {
         <div style={{background:'#000000', minHeight: '100vh'}}>
         <div style={{ padding: '20px 40px', fontFamily: 'sans-serif', margin: '0 auto', width: 'fit-content', boxSizing: 'border-box' }}>
             
-            <h1 style={{ textAlign: 'center', color: '#f5f5f5', marginBottom: '5px' }}>AI Chatbot</h1>
+            <h1 style={{ textAlign: 'center', color: '#f5f5f5', marginBottom: '5px' }}>Central Zoo AI Chatbot</h1>
             
             {/* CONDITIONAL RENDER: This greeting sub-header banner will automatically hide once messages exist */}
             {messages.length === 0 && (
